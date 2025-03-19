@@ -10,6 +10,10 @@ public class AudioBook extends Title{
 
     @Override
     protected double calculatePoints() {
-        return 0;
+        double factor = convertLiterature();
+        double totalPoints = (durationInMinutes / 2.0) * factor * super.copies;
+        return totalPoints;
     }
+
+
 }

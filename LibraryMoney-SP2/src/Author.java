@@ -6,6 +6,7 @@ public class Author {
 
     public Author(String name){
         this.name = name;
+        this.titles = new ArrayList<>();
     }
 
     public void addTitle(Title title){
@@ -13,7 +14,12 @@ public class Author {
     }
 
     public float calculateTotalPay(){
-        return -1;
+        float totalAmount = 0;
+        for(Title t: titles){
+            totalAmount += t.calculateRoyalty();
+        }
+        float roundedAmount = Math.round(totalAmount * 100f)/100.0f;
+        return roundedAmount;
     }
 
     public String getName(){

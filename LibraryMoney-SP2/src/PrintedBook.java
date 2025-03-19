@@ -9,6 +9,7 @@ public class PrintedBook extends Title{
     }
     @Override
     protected double calculatePoints() {
-        return 0;
+        double totalPoints = this.pages * convertLiterature() * super.copies;
+        return totalPoints;
     }
 }
