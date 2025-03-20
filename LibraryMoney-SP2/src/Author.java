@@ -30,5 +30,13 @@ public class Author {
         return this.name + " will receive royalties from the library: " + this.calculateTotalPay() + "kr.";
     }
 
+    public void playAudioBooks() {
+        for (Title title : titles) {
+            if (title instanceof IAudioBook) {
+                IAudioBook audioBook = (IAudioBook) title;
+                audioBook.playAudio();
+            }
+        }
 
+    }
 }

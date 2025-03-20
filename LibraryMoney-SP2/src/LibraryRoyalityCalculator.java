@@ -9,6 +9,8 @@ public class LibraryRoyalityCalculator {
 
         addBooks(); //Tilføj bøger til bibloteket
         authorPayment(); //Udskriv betaling forfattere
+        playAudioBooks(); //Spiller alle forfatters audiobøger vha. Interface IAudio
+
     }
 
 
@@ -69,13 +71,20 @@ public class LibraryRoyalityCalculator {
         a7.addTitle(new EBook("Cooking with Morten", "FAG", 97, 50, 205, 360000, false));
         a7.addTitle(new EAudioBook("Cooking with Morten", "FAG", 97, 50, 205, 320));
         authors.add(a7);
+
     }
 
     public static void authorPayment() {
         for (Author a : authors) {
             System.out.println(a);
         }
+        System.out.println();//TomLinje
+    }
 
+    public static void playAudioBooks(){
+        for(Author a: authors){
+            a.playAudioBooks();
+        }
     }
 
 

@@ -10,7 +10,7 @@ public abstract class Title {
     }
 
     public double calculateRoyalty() {
-        return calculatePoints() * rate;
+        return calculatePoints() * this.rate;
     }
 
     public String getTitle() {
@@ -20,7 +20,7 @@ public abstract class Title {
     protected abstract double calculatePoints();
 
     protected double convertLiterature() {
-        switch (literatureType) {
+        switch (this.literatureType) {
             case "BI":
             case "TE":
                 return 3.0;
@@ -31,7 +31,7 @@ public abstract class Title {
             case "FAG":
                 return 1.0;
             default:
-                System.out.println("Advarsel: Ukendt litteraturtype " + literatureType);
+                System.out.println("Advarsel: Ukendt litteraturtype " + this.literatureType);
                 return -1;
         }
     }
