@@ -1,8 +1,7 @@
 public abstract class Title {
-    private String title;
+    private final String title;
     protected final double rate;
-    private String literatureType;
-
+    private final String literatureType;
 
     public Title(String title, String literatureType) {
         this.title = title;
@@ -12,6 +11,10 @@ public abstract class Title {
 
     public double calculateRoyalty() {
         return calculatePoints() * rate;
+    }
+
+    public String getTitle() {
+        return this.title;
     }
 
     protected abstract double calculatePoints();
