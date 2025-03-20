@@ -1,4 +1,4 @@
-public class PrintedBook extends Title{
+public class PrintedBook extends PhysicalBook{
 
     private int pages;
 
@@ -9,7 +9,8 @@ public class PrintedBook extends Title{
     }
     @Override
     protected double calculatePoints() {
-        double totalPoints = this.pages * convertLiterature() * super.copies;
+        double literaturePoint = convertLiterature();
+        double totalPoints = this.pages * literaturePoint * super.copies;
         return totalPoints;
     }
 }

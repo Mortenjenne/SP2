@@ -1,4 +1,4 @@
-public class AudioBook extends Title{
+public class AudioBook extends PhysicalBook implements IAudioBook{
 
     private int durationInMinutes;
 
@@ -10,8 +10,8 @@ public class AudioBook extends Title{
 
     @Override
     protected double calculatePoints() {
-        double factor = convertLiterature();
-        double totalPoints = (durationInMinutes / 2.0) * factor * super.copies;
+        double literaturePoint = convertLiterature();
+        double totalPoints = (durationInMinutes / 2.0) * literaturePoint * super.copies;
         return totalPoints;
     }
 

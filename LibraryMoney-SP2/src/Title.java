@@ -1,19 +1,14 @@
 public abstract class Title {
     private String title;
-    protected int copies;
-    protected double rate;
+    protected final double rate;
     private String literatureType;
 
 
-    public Title(String title, String literatureType, int copies) {
+    public Title(String title, String literatureType) {
         this.title = title;
-        this.copies = copies;
         this.rate = 0.067574;
-        this.literatureType = literatureType;
-
-
+        this.literatureType = literatureType.toUpperCase();
     }
-
 
     public double calculateRoyalty() {
         return calculatePoints() * rate;
